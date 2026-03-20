@@ -1,0 +1,104 @@
+/* BACKGROUND: GOLD + BLACK */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  color: gold;
+  background: linear-gradient(-45deg, #000000, #FFD700, #000000, #FFD700);
+  background-size: 400% 400%;
+  animation: bg 15s infinite;
+}
+
+@keyframes bg {
+  0% {background-position: 0% 0%;}
+  50% {background-position: 100% 100%;}
+  100% {background-position: 0% 0%;}
+}
+
+/* SCREENS */
+.atm { padding-top: 50px; }
+.screen { display: none; }
+.active { display: block; }
+
+/* TITLE */
+.title { font-size: 40px; margin-bottom: 20px; }
+
+/* LOGO */
+.logo-container {
+  display: inline-block;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+  border: 4px solid gold;
+  border-radius: 20px;
+  padding: 15px;
+  background: black;
+  box-shadow: 0px 0px 20px rgba(255,215,0,0.8);
+}
+.logo { width: 180px; filter: drop-shadow(2px 2px 8px gold); }
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  color: gold;
+  text-shadow: 1px 1px 4px black;
+}
+@keyframes logoGlow {
+  0% {transform: scale(1); box-shadow: 0 0 10px rgba(255,215,0,0.6);}
+  100% {transform: scale(1.05); box-shadow: 0 0 25px rgba(255,215,0,1);}
+}
+
+/* MARQUEE */
+.marquee-container { overflow: hidden; white-space: nowrap; margin: 20px 0; }
+.marquee {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Times New Roman", serif;
+  animation: marquee 12s linear infinite;
+}
+@keyframes marquee { 0% {transform: translateX(-100%);} 100% {transform: translateX(100%);} }
+
+/* BUTTONS */
+.btn {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: gold;
+  color: black;
+  transition: 0.3s;
+}
+.btn:hover { transform: scale(1.1); background: black; color: gold; }
+
+/* GRID CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 180px);
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255,215,0,0.2);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 18px;
+  color: black;
+}
+.card:hover { transform: scale(1.1); background: rgba(255,215,0,0.4); }
+
+/* OUTPUT */
+#output { margin-top: 20px; font-size: 18px; text-align: center; color: gold; }
+
+/* FOOTER */
+.footer { margin-top: 50px; font-size: 14px; color: #ccc; }
+
+/* THANK YOU SCREEN */
+.thank-you h2 {
+  color: gold;
+  font-size: 32px;
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }

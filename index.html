@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LCCS ATM</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="atm">
+
+  <!-- START SCREEN -->
+  <div id="startScreen" class="screen active">
+    <div class="logo-container">
+      <img src="https://i.pinimg.com/1200x/59/26/14/5926146e6c0166a68822b6214577f4b7.jpg" alt="LCCS Bank Logo" class="logo">
+      <p class="logo-text">LCCS — Your Trusted Bank</p>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee">Welcome to LCCS Bank — Securing Your Future</div>
+    </div>
+    <button id="startBtn" class="btn">START</button>
+  </div>
+
+  <!-- PIN SCREEN -->
+  <div id="pinScreen" class="screen">
+    <h2>Enter Your PIN</h2>
+    <input type="password" id="pinInput" placeholder="****">
+    <button id="pinBtn" class="btn">Submit</button>
+    <p id="pinMsg"></p>
+  </div>
+
+  <!-- LANGUAGE SELECTION -->
+  <div id="langScreen" class="screen">
+    <h2>Select Language</h2>
+    <div class="grid">
+      <button class="btn" onclick="selectLang('EN')">English</button>
+      <button class="btn" onclick="selectLang('AM')">አማርኛ</button>
+      <button class="btn" onclick="selectLang('OR')">Afaan Oromo</button>
+      <button class="btn" onclick="selectLang('TG')">ትግርኛ</button>
+    </div>
+  </div>
+
+  <!-- ATM MENU -->
+  <div id="menuScreen" class="screen">
+    <h2 id="menuTitle"></h2>
+    <div class="grid">
+      <button class="card" onclick="checkBalance()" id="balanceBtn"></button>
+      <button class="card" onclick="deposit()" id="depositBtn"></button>
+      <button class="card" onclick="withdraw()" id="withdrawBtn"></button>
+      <button class="card" onclick="borrow()" id="borrowBtn"></button>
+      <button class="card" onclick="showHistory()" id="historyBtn"></button>
+      <button class="card" onclick="exitATM()" id="exitBtn"></button>
+    </div>
+    <div id="output"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>For help contact: support@lccsbank.com</p>
+  </div>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
